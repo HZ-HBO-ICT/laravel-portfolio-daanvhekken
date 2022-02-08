@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
+          rel='stylesheet' type='text/css'>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script type="text/javascript" src="{{'/js/scripts.js'}}"></script>
+    <!-- bootstrap javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+    <!-- programming language icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+    <link rel="stylesheet" href="{{ url('/css/style.css') }}">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Table with all courses and grades.">
+</head>
+<html lang="en">
+<body class="content">
+<nav class="sidebar sidebar-block animate-left collapse center" style="z-index:3; width:300px; font-weight:bold"
+     id="sidebar"><br>
+    <h3 class="p-4 center"><b>Daan van Hekken</b></h3>
+    <a href="{{ url('') }}" class="sidebar-item sidebar-button"><i
+            class="bi bi-house me-2"></i>Home</a>
+    <a class="sidebar-item sidebar-button" style="text-decoration: underline;"><i
+            class="bi bi-window-sidebar me-2"></i>Dashboard</a>
+    <a href="{{ url('/profile') }}" class="sidebar-item sidebar-button"><i
+            class="bi bi-person-square me-2"></i>Profile</a>
+    <a href="{{ url('/blog') }}" class="sidebar-item sidebar-button"><i
+            class="bi bi-newspaper me-2"></i>Blog</a>
+    <a href="{{ url('/faq') }}" class="sidebar-item sidebar-button"><i
+            class="bi bi-question-square me-2"></i>Faq</a>
+    <a href="{{ url('/contact') }}" class="sidebar-item sidebar-button"><i
+            class="bi bi-envelope-open me-2"></i>Contact</a>
+</nav>
+
+<header class="topbar hide-large padding-16">
+    <span class="float-left p-3">Daan van Hekken</span>
+    <a href="javascript:void(0)" class="float-right sidebar-button" onclick="open_sidemenu()">
+      <div id="nav-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
+  </header>
+
+<div class="mobile-overlay hide-large" style="cursor:pointer" title="close side menu"
+     id="mobile_overlay"></div>
+
+<div class="main-content" style="margin-left:300px">
+    <div class="hide-large" style="margin-top:83px"></div>
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 2%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        <div style="border-right: 5px solid black; width: 75%;" class="progress-bar-marker" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    <table class="table text-light">
+        <thead>
+         <tr>
+        <th scope="col">Quartile</th>
+        <th scope="col">Course</th>
+        <th scope="col">EC</th>
+        <th scope="col">Exam</th>
+        <th scope="col">Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td rowspan="3">1</td>
+        <td>Programme and Career Orientation</td>
+        <td>2.5</td>
+        <td>Assesment</td>
+        <td>10</td>
+        </tr>
+        <tr>
+        <td>Computer Science Basics</td>
+        <td>5</td>
+        <td>Written Exam</td>
+        <td>55/90 - 5,5</td>
+        </tr>
+        <tr class="active">
+        <td>Programming Basics</td>
+        <td>5</td>
+        <td>Case Study Exam</td>
+        <td>6 after resit = </td>
+        </tr>
+        <tr>
+        <td rowspan="1">2</td>
+        <td>Object Oriented Programming</td>
+        <td>10</td>
+        <td>Case Study &amp;
+        Project</td>
+        <td>-</td>
+        </tr>
+        <tr>
+        <td rowspan="2">3</td>
+        <td>Framework Project 1 </td>
+        <td>5</td>
+        <td>C2 Portofolio Exams</td>
+        <td>-</td>
+        </tr>
+        <tr>
+        <td>Framework Development 1</td>
+        <td>7.5</td>
+        <td>Case Study</td>
+        <td>-</td>
+        </tr>
+        <tr>
+        <td rowspan="1">4</td>
+        <td>Framework Project 2 </td>
+        <td>10</td>
+        <td>Portofolio Exam</td>
+        <td>-</td>
+        </tr>
+        <tr>
+        <td rowspan="2">-</td>
+        <td>Personal Development</td>
+        <td>12.5</td>
+        <td>Portfolio</td>
+        <td>-</td>
+        </tr>
+        <tr>
+        <td>IT personality</td>
+        <td>2.5</td>
+        <td>Portofolio</td>
+        <td>8 and </td>
+        </tr>
+        </tbody>
+        </table>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white footer-socials">
+        <!-- Copyright -->
+        <div class="text-center p-4">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold">DaanvanHekken.com</a>
+        </div>
+        <!-- Copyright -->
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/daanvanhekken/" target="_blank" class="linkedin-link w-inline-block"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/daanvhekken" target="_blank" class="github-link w-inline-block"><i class="bi bi-github"></i></a>
+        </div></footer>
+    <!-- Footer -->
+</div>
+</body>
+</html>

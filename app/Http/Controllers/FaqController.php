@@ -7,7 +7,8 @@ class FaqController
     /*
      * @return faq view
      */
-    public function show() {
+    public function show()
+    {
         return view('faq');
     }
 }

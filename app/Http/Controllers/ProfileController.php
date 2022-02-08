@@ -7,7 +7,8 @@ class ProfileController
     /*
      * @return profile view
      */
-    public function show() {
+    public function show()
+    {
         return view('profile');
     }
 }

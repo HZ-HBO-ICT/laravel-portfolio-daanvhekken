@@ -7,7 +7,8 @@ class BlogController
     /*
      * @return blog view
      */
-    public function show() {
+    public function show()
+    {
         return view('blog');
     }
 }

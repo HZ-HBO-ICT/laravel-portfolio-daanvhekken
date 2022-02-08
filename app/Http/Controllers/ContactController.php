@@ -7,7 +7,8 @@ class ContactController
     /*
      * @return contact view
      */
-    public function show() {
+    public function show()
+    {
         return view('contact');
     }
 }

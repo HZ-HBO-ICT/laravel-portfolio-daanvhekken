@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
@@ -18,25 +19,11 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/posts/{post}', function ($post) {
-    $posts = [
-        'my-first-post' => 'Hello, this is my first blog post!',
-        'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-    ];
-
-    if (!array_key_exists($post, $posts)) {
-        abort(404, 'Sorry, that post was not found.');
-    }
-
-    return view('post', [
-        'post' => $posts[$post]
-    ]);
-});
-
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/posts/{post}', [PostController::class, 'show']);
 Route::get('/blog',[BlogController::class, 'show']);
 Route::get('/contact',[ContactController::class, 'show']);
 Route::get('/dashboard',[DashboardController::class, 'show']);

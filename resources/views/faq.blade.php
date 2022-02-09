@@ -57,99 +57,22 @@
             <div class="center padding-32" id="about">
 
             <div class="accordion accordion-flush mb-4" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button collapsed gradient-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    What do i do if i need to print a document?
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                  <div class="accordion-body text-start">
-                    Navigate to <a href="https://print.hz.nl/" target="_blank">print.hz.nl</a> and follow the steps to print your documents!
-                  </div>
-                </div>
+                @foreach($faqs as $faq)
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-{{ $faq->id }}">
+                            <button class="accordion-button collapsed gradient-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $faq->id }}" aria-expanded="true" aria-controls="collapse-{{ $faq->id }}">
+                                {{ $faq->question }}
+                            </button>
+                        </h2>
+                        <div id="collapse-{{ $faq->id }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ $faq->id }}">
+                            <div class="accordion-body text-start">
+                                {{ $faq->answer }}
+                                <a href="{{ url( $faq->question ) }}">Handy URL</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed gradient-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    How do i scan a document and sent it to my laptop?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                  <div class="accordion-body text-start">
-                    Navigate to <a href="https://print.hz.nl/" target="_blank">print.hz.nl</a> and follow the steps to print your documents!                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed gradient-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    What do i do when i get sick or show symptoms of covid-19?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                  <div class="accordion-body text-start">
-                    Do you have health complaints like a cold, cough, high temperature or sudden loss of taste and smell? Do you have a fever? Take a look if you can visit the HZ <a href="https://hz.nl/coronavirus/faq/faq.blade.php" target="_blank">here.</a>
-                    <br><br>
-                    Protect if needed yourself and others and get yourself tested. You can make an appointment via 0800-1202 or via <a href="https://coronatest.nl/" target="_blank">coronatest.nl</a>, this test is free
-                  </div>
-                  </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                  <button class="accordion-button collapsed gradient-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    How do i book a project space in one of the wings?
-                  </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
-                  <div class="accordion-body text-start">
-                    Head over to <a href="https://hzuniversity.topdesk.net/tas/public/ssp/content/page/locationreservationplanner/" target="_blank">the selfservice portal's location reservation planner.</a> From here you can select a timeslot in the desired room.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                  <button class="accordion-button collapsed gradient-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    What are the instructions if you want to park your car at the HZ parking lot?
-                  </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
-                  <div class="accordion-body text-start">
-                    If you have a HZ student pass navigate with your car to the parking spot on the following adres: Poelendaelesingel, 4335 JA Middelburg. Here you can press your hz student pass against the NFC scanner and the pole will open up and you can park your car.
-                  <br><br>
-                  <iframe
-                    width="100%"
-                    height="450"
-                    style="border:0"
-                    loading="lazy"
-                    allowfullscreen
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCBvVIELMtdd215sAiOwMFZU-khBIzgnso
-                      &q=Poelendaelesingel,+4335+JA+Middelburg">
-                  </iframe>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                  <button class="accordion-button collapsed gradient-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Relevant and usefull links to other sites.
-                  </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
-                  <div class="accordion-body text-start">
-                    <section>To the right you should see a handfull of relevant and usefull links.</section>
-                    <aside>
-                      <div><a href="https://hz.nl/uploads/documents/Regelingen/NL/Onderwijs-examenregelingen/OER-HZ-2021-2022-BaDEF19-8-2021naBDT13-7-21-Nvdw.pdf" target="_blank">The HZ HBO-ICT Course and Examination Regulations (CER)</a></div>
-                      <div><a href="https://hz.nl/uploads/documents/Regelingen/OERS/2019-2020/2020-2021-ICT-Implementation-Regulations-CER-HZ-DEF1.0.pdf" target="_blank">The Implementation Regulations (IR) of the HBO-ICT programme</a></div>
-                      <div><a href="https://www.notion.so/Assignment-Specification-661c5ac5d7494328a58be61d00dd41e4" target="_blank">Notion envoirement</a></div>
-                      <div><a href="https://teams.microsoft.com/_#/school/" target="_blank">The Teams environment of the study programme</a></div>
-                      <div><a href="https://github.com/daanvhekken" target="_blank">My github environment</a></div>
-                  </aside>
-                  </div>
-                </div>
-              </div>
-
             </div>
                 <!-- Footer -->
                 <footer class="text-center text-lg-start text-white footer-socials">

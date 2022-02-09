@@ -13,7 +13,6 @@ class FaqController
     {
         $faqs = DB::table('faqs')->get();
 
-//        dd($faqs);
         return view('faq', [
             'faqs' => $faqs
         ]);

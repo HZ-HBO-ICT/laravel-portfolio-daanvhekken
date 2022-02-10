@@ -66,6 +66,9 @@ a:hover {
     -ms-user-select      : none;
     user-select          : none
 }
+.sidebar-button.active {
+    text-decoration: underline;
+}
 
 .sidebar-button:disabled {
     cursor : not-allowed;

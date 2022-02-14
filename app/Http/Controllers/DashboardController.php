@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 class DashboardController
 {
     /*
@@ -9,6 +11,13 @@ class DashboardController
      */
     public function show()
     {
-        return view('dashboard');
+        $courses = DB::table('courses')->get();
+        $grades = DB::table('grades')->get();
+
+        return view('dashboard', [
+            'courses' => $courses,
+            'grades' => $grades
+        ]
+        );
     }
 }

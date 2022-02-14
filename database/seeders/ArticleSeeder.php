@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class ArticleSeeder extends Seeder
 {
     /**
      * Run the database seeders.
@@ -13,9 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            ArticleSeeder::class,
-            FaqSeeder::class,
-        ]);
+        Article::factory()
+            ->count(50)
+            ->create();
     }
 }

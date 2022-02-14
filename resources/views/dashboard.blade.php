@@ -15,66 +15,24 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td rowspan="3">1</td>
-                <td>Programme and Career Orientation</td>
-                <td>2.5</td>
-                <td>Assesment</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>Computer Science Basics</td>
-                <td>5</td>
-                <td>Written Exam</td>
-                <td>55/90 - 5,5</td>
-            </tr>
-            <tr>
-                <td>Programming Basics</td>
-                <td>5</td>
-                <td>Case Study Exam</td>
-                <td>6 after resit = </td>
-            </tr>
-            <tr>
-                <td rowspan="1">2</td>
-                <td>Object Oriented Programming</td>
-                <td>10</td>
-                <td>Case Study &amp;
-                Project</td>
-                <td>-</td>
-            </tr>
-            <tr class="active">
-                <td rowspan="2">3</td>
-                <td>Framework Project 1 </td>
-                <td>5</td>
-                <td>C2 Portofolio Exams</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Framework Development 1</td>
-                <td>7.5</td>
-                <td>Case Study</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td rowspan="1">4</td>
-                <td>Framework Project 2 </td>
-                <td>10</td>
-                <td>Portofolio Exam</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td rowspan="2">-</td>
-                <td>Personal Development</td>
-                <td>12.5</td>
-                <td>Portfolio</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>IT personality</td>
-                <td>2.5</td>
-                <td>Portofolio</td>
-                <td>8 and </td>
-            </tr>
+            @foreach($courses as $course)
+                <tr>
+                    @if(!$course->is_sub_course) )
+                        <td>{{ $course->quartile }}</td>
+                    @else
+                        <td style="border-bottom:0"></td>
+                    @endif
+                    <td>{{ $course->course_name }}</td>
+                    <td>{{ $course->ec }}</td>
+                    <td>{{ $course->assessment_type }}</td>
+                    {{-- I dont know either.. it works though! --}}
+                    @foreach($grades as $grade)
+                        @if($course->assessment_id === $grade->assessment_id) )
+                        <td>{{ $grade->id }}</td>
+                        @endif
+                    @endforeach
+                </tr>
+            @endforeach
         </tbody>
     </table>
 @endsection

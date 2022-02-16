@@ -51,6 +51,6 @@ class BlogController
 
         $article->save();
 
-        return redirect('/articles');
+        return redirect('/blogs');
     }
 }

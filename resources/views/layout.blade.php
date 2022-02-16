@@ -44,7 +44,7 @@
         </a>
         <a href="{{ url('/blogs') }}" class="sidebar-item sidebar-button {{ Request::path() === 'blog' ? 'active' : '' }}">
             <i class="bi bi-newspaper me-2"></i>
-            Blog
+            Blogs
         </a>
         <a href="{{ url('/faq') }}" class="sidebar-item sidebar-button {{ Request::path() === 'faq' ? 'active' : '' }}">
             <i class="bi bi-question-square me-2"></i>

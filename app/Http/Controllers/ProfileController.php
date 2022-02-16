@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 class ProfileController
 {
     /*
@@ -9,6 +11,10 @@ class ProfileController
      */
     public function show()
     {
-        return view('profile');
+        $articles = DB::table('articles')->latest()->take(3)->get();
+
+        return view('profile', [
+            'articles' => $articles
+        ]);
     }
 }

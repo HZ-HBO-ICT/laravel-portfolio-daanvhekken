@@ -17,4 +17,28 @@ class BlogController
             'blog' => $blog
         ]);
     }
+
+    /*
+     * @return blog view
+     */
+    public function index()
+    {
+        $articles = DB::table('articles')->latest()->get();
+
+        return view('blogs', [
+            'articles' => $articles
+        ]);
+    }
+
+    /*
+     * @return create blog view
+     */
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store() {
+        die('hellow');
+    }
 }

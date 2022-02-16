@@ -23,26 +23,13 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/profile', function () {
-    $articles = DB::table('articles')->latest()->take(3)->get();
-
-    return view('profile', [
-        'articles' => $articles
-    ]);
-});
-
-Route::get('/blogs', function () {
-    $articles = DB::table('articles')->latest()->get();
-
-    return view('blogs', [
-        'articles' => $articles
-    ]);
-});
-
-Route::get('/posts/{post}', [PostController::class, 'show']);
+Route::get('/profile',[ProfileController::class,'show']);
+Route::get('/blogs',[BlogController::class, 'index']);
+Route::post('/blogs',[BlogController::class, 'store']);
+Route::get('/blogs/create',[BlogController::class, 'create']);
 Route::get('/blog/{blog}',[BlogController::class, 'show']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
+
 Route::get('/contact',[ContactController::class, 'show']);
 Route::get('/dashboard',[DashboardController::class, 'show']);
 Route::get('/faq',[FaqController::class, 'show']);
-//Route::get('/profile',[ProfileController::class, 'show']);

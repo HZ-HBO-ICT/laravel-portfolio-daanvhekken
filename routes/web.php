@@ -33,3 +33,4 @@ Route::get('/posts/{post}', [PostController::class, 'show']);
 Route::get('/contact',[ContactController::class, 'show']);
 Route::get('/dashboard',[DashboardController::class, 'show']);
 Route::get('/faq',[FaqController::class, 'show']);
+Route::post('/faq',[FaqController::class, 'store']);

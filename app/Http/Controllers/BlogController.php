@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Support\Facades\DB;
 
 class BlogController
@@ -39,6 +40,17 @@ class BlogController
     }
 
     public function store() {
-        die('hellow');
+        $highest_position = (DB::table('articles')->latest('position')->first());
+
+        $article = new Article();
+
+        $article->title = request('title');
+        $article->content =  request('content');
+        $article->read_time = request('readTime');
+        $article->position = $highest_position->position + 10;
+
+        $article->save();
+
+        return redirect('/articles');
     }
 }

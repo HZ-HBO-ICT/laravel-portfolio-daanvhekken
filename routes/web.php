@@ -27,6 +27,9 @@ Route::get('/profile',[ProfileController::class,'show']);
 Route::get('/blogs',[BlogController::class, 'index']);
 Route::post('/blogs',[BlogController::class, 'store']);
 Route::get('/blogs/create',[BlogController::class, 'create']);
+Route::get('/blog/{blog}/edit-article',[BlogController::class, 'edit']);
+Route::delete('/blog/{blog}', [BlogController::class, 'delete']);
+Route::put('/blog/{blog}',[BlogController::class, 'update']);
 Route::get('/blog/{blog}',[BlogController::class, 'show']);
 Route::get('/posts/{post}', [PostController::class, 'show']);
 
@@ -34,3 +37,6 @@ Route::get('/contact',[ContactController::class, 'show']);
 Route::get('/dashboard',[DashboardController::class, 'show']);
 Route::get('/faq',[FaqController::class, 'show']);
 Route::post('/faq',[FaqController::class, 'store']);
+Route::put('/faq/{faq}',[FaqController::class, 'update']);
+Route::delete('/faq/{faq}', [FaqController::class, 'delete']);
+Route::get('/faq/{faq}/edit-faq',[FaqController::class, 'edit']);

@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+
     <form method="POST" action="/faq">
         @csrf
         <div class="form-row">
@@ -33,6 +34,7 @@
                     <div class="accordion-body text-start">
                         {{ $faq->answer }}
                         <a href="{{ url( $faq->question ) }}">Handy URL</a>
+                        <a href="faq/{{ $faq->id }}/edit-faq" class="button card-link">Edit faq</a>
                     </div>
                 </div>
             </div>

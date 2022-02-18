@@ -81,8 +81,8 @@ class BlogController
      *
      * return updated blog view
     */
-    public function update($blog_id) {
-
+    public function update($blog_id)
+    {
         request()->validate([
             'title' => 'required',
             'content' => 'required',
@@ -105,7 +105,8 @@ class BlogController
      *
      * return all blogs view
     */
-    public function delete($blog_id) {
+    public function delete($blog_id)
+    {
         $blog = Article::find($blog_id);
 
         $blog->delete();

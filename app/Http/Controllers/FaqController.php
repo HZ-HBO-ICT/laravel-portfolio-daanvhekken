@@ -59,7 +59,8 @@ class FaqController
      *
      * return to faq view
      */
-    public function update($faq_id) {
+    public function update($faq_id)
+    {
         request()->validate([
             'question' => 'required',
             'answer' => 'required'
@@ -81,12 +82,12 @@ class FaqController
      *
      * return all faqs view
     */
-    public function delete($faq_id) {
+    public function delete($faq_id)
+    {
         $faq = Faq::find($faq_id);
 
         $faq->delete();
 
         return redirect('/faq');
     }
-
 }

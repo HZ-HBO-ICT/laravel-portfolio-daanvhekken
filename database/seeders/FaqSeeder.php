@@ -44,10 +44,14 @@ class FaqSeeder extends Seeder
         DB::table('faqs')->insert([
             'question' => 'What are the instructions if you want to park your car at the HZ parking lot?',
             'answer' => '
-            If you have a HZ student pass navigate with your car to the parking spot on the following adres: Poelendaelesingel, 4335 JA Middelburg.
-            Here you can press your hz student pass against the NFC scanner and the pole will open up and you can park your car. ',
+            If you have a HZ student pass navigate with your car to
+            the parking spot on the following adres: Poelendaelesingel, 4335 JA Middelburg.
+            Here you can press your hz student pass against the
+            NFC scanner and the pole will open up and you can park your car. ',
             'link' => '
-            https://www.google.com/maps/place/Poelendaelesingel,+4335+JA+Middelburg/data=!4m2!3m1!1s0x47c490cf037d0a93:0x4c798c80240e3bbf?sa=X&ved=2ahUKEwik-b73iPH1AhWFO-wKHR6nAHUQ8gF6BAgaEAE',
+            https://www.google.com/maps/place/
+            Poelendaelesingel,+4335+JA+Middelburg/data=!4m2!3m1!1s0x47c490cf037d0a93:0x4c798c80240e
+            3bbf?sa=X&ved=2ahUKEwik-b73iPH1AhWFO-wKHR6nAHUQ8gF6BAgaEAE',
         ]);
     }
 }

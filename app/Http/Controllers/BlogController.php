@@ -40,11 +40,21 @@ class BlogController
         return view('create');
     }
 
-    public function store() {
+    /*
+     * add new blog to article table
+     *
+     * @return blogs view
+     */
+    public function store()
+    {
         $highest_position = (DB::table('articles')->latest('position')->first());
 
+        request()->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'read_time' => 'required'
+        ]);
         $article = new Article();
-
         $article->title = request('title');
         $article->content =  request('content');
         $article->read_time = request('readTime');
@@ -72,6 +82,13 @@ class BlogController
      * return updated blog view
     */
     public function update($blog_id) {
+
+        request()->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'read_time' => 'required'
+        ]);
+
         $blog = Article::find($blog_id);
 
         $blog->title = request('title');

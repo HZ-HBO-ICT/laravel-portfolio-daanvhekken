@@ -17,7 +17,6 @@ class DashboardController
         return view('dashboard', [
             'courses' => $courses,
             'grades' => $grades
-        ]
-        );
+        ]);
     }
 }

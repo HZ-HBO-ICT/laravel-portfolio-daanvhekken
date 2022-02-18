@@ -9,8 +9,11 @@ class Grade extends Model
 {
     use HasFactory;
 
-    public function addResult($grade) {
-
+    /*
+     * Add new grade to the grade table and do some checks
+     */
+    public function addResult($grade)
+    {
         $this->refresh();
 
 //      do nothing when the new grade is lower than the current grade

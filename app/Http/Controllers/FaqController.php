@@ -25,7 +25,12 @@ class FaqController
      *
      * return to faq view
      */
-    public function store() {
+    public function store()
+    {
+        request()->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
 
         $faq = new Faq();
 
@@ -49,7 +54,17 @@ class FaqController
         ]);
     }
 
+    /*
+     * Update Faq
+     *
+     * return to faq view
+     */
     public function update($faq_id) {
+        request()->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
+
         $faq = Faq::find($faq_id);
 
         $faq->question = request('question');

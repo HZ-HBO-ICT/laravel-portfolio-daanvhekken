@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+    <a class="button mb-4" href="blogs/create">Create new blog</a>
     @foreach($articles as $article)
         <div class="card" style="width: 18rem; margin-bottom: 20px;">
             <div class="card-body">

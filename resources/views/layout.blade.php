@@ -85,7 +85,7 @@
 
     <div class="main-content" style="margin-left:300px">
         <div class="hide-large" style="margin-top:83px"></div>
-        <div class="center padding-32" id="about">
+        <div class="padding-32" id="about">
             @yield('content')
         </div>
         <!-- Footer -->

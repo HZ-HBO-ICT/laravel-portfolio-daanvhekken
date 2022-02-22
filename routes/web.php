@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PostController;
@@ -24,13 +24,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blogs',[BlogController::class, 'index']);
-Route::post('/blogs',[BlogController::class, 'store']);
-Route::get('/blogs/create',[BlogController::class, 'create']);
-Route::get('/blog/{blog}/edit-article',[BlogController::class, 'edit']);
-Route::delete('/blog/{blog}', [BlogController::class, 'delete']);
-Route::put('/blog/{blog}',[BlogController::class, 'update']);
-Route::get('/blog/{blog}',[BlogController::class, 'show']);
+Route::get('/articles',[ArticleController::class, 'index']);
+Route::post('/articles',[ArticleController::class, 'store']);
+Route::get('/articles/create',[ArticleController::class, 'create']);
+Route::get('/article/{article}/edit-article',[ArticleController::class, 'edit']);
+Route::delete('/article/{article}', [ArticleController::class, 'delete']);
+Route::put('/article/{article}',[ArticleController::class, 'update']);
+Route::get('/article/{article}',[ArticleController::class, 'show'])->name('articles.show');
 
 Route::get('/posts/{post}', [PostController::class, 'show']);
 

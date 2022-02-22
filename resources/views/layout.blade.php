@@ -42,7 +42,7 @@
             <i class="bi bi-person-square me-2"></i>
             Profile
         </a>
-        <a href="{{ url('/blogs') }}" class="sidebar-item sidebar-button {{ Request::path() === 'blog' ? 'active' : '' }}">
+        <a href="{{ url('/articles') }}" class="sidebar-item sidebar-button {{ Request::path() === 'blog' ? 'active' : '' }}">
             <i class="bi bi-newspaper me-2"></i>
             Blogs
         </a>

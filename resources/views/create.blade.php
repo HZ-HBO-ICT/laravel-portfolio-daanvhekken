@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <form method="POST" action="/blogs">
+    <form method="POST" action="/articles">
         @csrf
         <div class="form-row">
             <div class="form-group col-md-12">
@@ -14,7 +14,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="inputReadTime">Read time</label>
-            <input type="number" class="form-control @error('read_time') border-danger @enderror" name="readTime" id="inputReadTime" placeholder="Minutes" value="{{ old('read_time') }}">
+            <input type="number" class="form-control @error('read_time') border-danger @enderror" name="read_time" id="inputReadTime" placeholder="Minutes" value="{{ old('read_time') }}">
             @error('read_time')
                 <p class="text-danger">This field is required</p>
             @enderror
